@@ -58,34 +58,32 @@ Desenvolupament d’escriptori amb .NET
 
 
 
-2\. \*\*.NET Framework 4.7.2 Developer Pack\*\*
+2\. **.NET Framework 4.7.2 Developer Pack**
 
 &#x20;  El projecte utilitza .NET Framework 4.7.2, per tant cal instal·lar aquest paquet per poder compilar-lo correctament.
 
 
 
-3\. \*\*Micròfon funcional\*\*
+3\. **Micròfon funcional**
 
 &#x20;  L’ordinador ha de tenir un micròfon connectat i configurat correctament.
 
 
 
-4\. \*\*Reconeixement de veu de Windows\*\*
+4\. **Reconeixement de veu de Windows**
 
 &#x20;  Cal comprovar que Windows té activat el reconeixement de veu i que el micròfon té permisos d’ús.
 
 
 
-5\. \*\*Llibreria `csDronLink.dll`\*\*
+5\. **Llibreria `csDronLink.dll`**
 
 &#x20;  Aquesta llibreria ha d’estar dins de la carpeta del projecte:
 
 
 
 ```text
-
 TFG-Reconeixement-Veu/csDronLink.dll
-
 ```
 
 
@@ -103,9 +101,7 @@ Per executar el projecte:
 
 
 ```bash
-
 git clone https://github.com/CarlaAbascal/TFG-Final.git
-
 ```
 
 
@@ -115,9 +111,7 @@ git clone https://github.com/CarlaAbascal/TFG-Final.git
 
 
 ```text
-
-TFG-Final/TFG-Reconeixement-Veu/
-
+TFG-Final/Demostradors/ReconeixementVeu/
 ```
 
 
@@ -127,9 +121,7 @@ TFG-Final/TFG-Reconeixement-Veu/
 
 
 ```text
-
 WindowsFormsApp1/WindowsFormsApp1.sln
-
 ```
 
 
@@ -139,14 +131,12 @@ WindowsFormsApp1/WindowsFormsApp1.sln
 
 
 ```text
-
 Compilar > Compilar solució
-
 ```
 
 
 
-5\. Executar l’aplicació des de Visual Studio amb el botó \*\*Iniciar\*\* o amb la tecla \*\*F5\*\*.
+5\. Executar l’aplicació des de Visual Studio amb el botó **Iniciar** o amb la tecla **F5**.
 
 
 
