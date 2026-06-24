@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Receiver</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            height: 100vh;
+            display: flex;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <video id="video" autoplay playsinline muted></video>
+
+    <script>
+        // Debe coincidir con server.py (puerto 8080)
+        const SERVER_URL = window.location.origin;
+
+        const pc = new RTCPeerConnection({
+            iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
+        });
+
+        // cuando llega el track del servidor, lo pintamos
+        pc.ontrack = (ev) => {
+            const v = document.getElementById("video");
+            const stream = (ev.streams && ev.streams[0]) ? ev.streams[0] : new MediaStream([ev.track]);
+            v.srcObject = stream;
+            v.play().catch(e => console.log("play blocked:", e));
+            console.log("ontrack", ev.track.kind);
+        };
+
+        async function startViewer() {
+            // 1) pedimos recibir v�deo
+            pc.addTransceiver("video", { direction: "recvonly" });
+
+            // 2) creamos offer local
+            const offer = await pc.createOffer();
+            await pc.setLocalDescription(offer);
+
+            // 3) enviamos offer al servidor (/viewer_offer) y recibimos answer
+            const resp = await fetch(`${SERVER_URL}/viewer_offer`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    sdp: pc.localDescription.sdp,
+                    type: pc.localDescription.type
+                })
+            });
+
+            if (!resp.ok) {
+                const txt = await resp.text();
+                throw new Error(`viewer_offer error: ${resp.status} ${txt}`);
+            }
+
+            const answer = await resp.json();
+
+            // 4) configuramos la answer
+            await pc.setRemoteDescription(answer);
+            console.log("Viewer conectado. Recibiendo v�deo...");
+        }
+
+        startViewer().catch(err => {
+            console.error(err);
+            alert(err.message);
+        });
+    </script>
+</body>
+</html>

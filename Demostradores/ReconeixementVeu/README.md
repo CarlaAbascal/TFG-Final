@@ -174,7 +174,7 @@ Aquest projecte està pensat per executar-se de manera independent dins del repo
 
 
 
-No cal descarregar cap altre repositori extern, ja que tots els fitxers necessaris per executar aquesta part han d’estar inclosos dins de la carpeta `TFG-Reconeixement-Veu`.
+No cal descarregar cap altre repositori extern, ja que tots els fitxers necessaris per executar aquesta part estan inclosos dins de la carpeta `ReconeixementVeu`.
 
 
 
