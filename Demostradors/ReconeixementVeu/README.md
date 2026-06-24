@@ -19,17 +19,11 @@ Les comandes reconegudes estan definides en castellà, per exemple:
 
 
 ```text
-
 conectar
-
 despegar
-
 aterrizar
-
 avanzar 5 metros
-
 girar 90 grados a la derecha
-
 girar 45 grados a la izquierda
 
 ```
@@ -51,9 +45,7 @@ Per executar aquest projecte cal tenir instal·lat:
 
 
 ```text
-
 Desenvolupament d’escriptori amb .NET
-
 ```
 
 
@@ -83,7 +75,7 @@ Desenvolupament d’escriptori amb .NET
 
 
 ```text
-TFG-Reconeixement-Veu/csDronLink.dll
+TFG-Final/Demostradors/ReconeixementVeu/csDronLink.dll
 ```
 
 
