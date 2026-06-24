@@ -100,7 +100,7 @@ git clone https://github.com/CarlaAbascal/TFG-Final.git
 
 
 
-2\. Accedir a la carpeta del demostrador:
+2\. Entrar a la carpeta del projecte de vídeo en temps real:
 
 
 
@@ -109,38 +109,7 @@ TFG-Final/Demostradors/StreamingVideo/
 ```
 
 
-
-3\. Obrir una terminal dins de la carpeta:
-
-
-
-```text
-feature-webrtc/
-```
-
-
-
-4\. Executar el servidor WebRTC:
-
-
-
-```bash
-python server.py
-```
-
-
-
-5\. Obrir una segona terminal dins de la mateixa carpeta i executar el publisher de vídeo:
-
-
-
-```bash
-python script_publisher.py
-```
-
-
-
-6\. Obrir amb Visual Studio el fitxer:
+3\. Obrir amb Visual Studio el fitxer de solució:
 
 
 
@@ -150,11 +119,45 @@ WindowsFormsApp1/WindowsFormsApp1.sln
 
 
 
-7\. Compilar i executar l’aplicació amb Visual Studio.
+4\. Des de Visual Studio, obrir el terminal integrat i situar-se dins de la carpeta `feature-webrtc/`.
 
 
 
-8\. Dins de l’aplicació, prémer el botó corresponent per iniciar el streaming. El vídeo es mostrarà dins del formulari mitjançant WebView2.
+5\. Executar el servidor WebRTC des del terminal de Visual Studio:
+
+```bash
+python server.py
+```
+
+Aquest terminal s’ha de mantenir obert mentre s’executa el demostrador.
+
+
+6\. Obrir un segon terminal dins de la mateixa carpeta i executar el publisher de vídeo:
+
+
+
+```bash
+python script_publisher.py
+```
+
+Aquest script captura el vídeo de la càmera i l’envia al servidor WebRTC.
+
+
+
+7\. Abans d’executar l’aplicació C#, es pot comprovar que el vídeo s’està transmetent correctament obrint en un navegador:
+
+```web
+http://127.0.0.1:8080/
+```
+
+Si tot funciona correctament, s’hauria de visualitzar el vídeo capturat per la càmera.
+
+
+8\. Compilar i executar l’aplicació amb Visual Studio.
+
+
+
+9\. Dins de l’aplicació, prémer el botó corresponent per iniciar el streaming. El vídeo es mostrarà dins del formulari mitjançant WebView2.
 
 
 
