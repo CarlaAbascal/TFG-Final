@@ -1,8 +1,8 @@
-\# Streaming de vídeo
+# Streaming de vídeo
 
 
 
-\## 1. Presentació
+## 1. Presentació
 
 
 
@@ -14,7 +14,7 @@ L’aplicació està desenvolupada en C# amb Windows Forms i utilitza WebView2 p
 
 
 
-\## 2. Instal·lació
+## 2. Instal·lació
 
 
 
@@ -22,73 +22,67 @@ Per executar aquest projecte cal tenir instal·lat:
 
 
 
-1\. \*\*Visual Studio 2019 o Visual Studio 2022\*\*
+1\. **Visual Studio 2019 o Visual Studio 2022**
 
 &#x20;  Durant la instal·lació cal seleccionar la càrrega de treball:
 
 
 
 ```text
-
 Desenvolupament d’escriptori amb .NET
-
 ```
 
 
 
-2\. \*\*.NET Framework 4.7.2 Developer Pack\*\*
+2\. **.NET Framework 4.7.2 Developer Pack**
 
 &#x20;  El projecte està desenvolupat amb .NET Framework 4.7.2.
 
 
 
-3\. \*\*Python 3\*\*
+3\. **Python 3**
 
 &#x20;  Necessari per executar el servidor WebRTC i el publisher de vídeo.
 
 
 
-4\. \*\*Llibreries de Python\*\*
+4\. **Llibreries de Python**
 
 &#x20;  Des de la carpeta `feature-webrtc`, instal·lar les dependències principals:
 
 
 
 ```bash
-
 pip install aiohttp aiortc opencv-python av
-
 ```
 
 
 
-5\. \*\*Microsoft Edge WebView2 Runtime\*\*
+5\. **Microsoft Edge WebView2 Runtime**
 
 &#x20;  Necessari perquè l’aplicació C# pugui mostrar el vídeo dins del formulari.
 
 
 
-6\. \*\*Càmera o webcam funcional\*\*
+6\. **Càmera o webcam funcional**
 
 &#x20;  El publisher de vídeo utilitza la càmera de l’ordinador.
 
 
 
-7\. \*\*Llibreria `csDronLink.dll`\*\*
+7\. **Llibreria `csDronLink.dll`**
 
 &#x20;  Aquesta DLL ha d’estar situada a la carpeta principal del demostrador:
 
 
 
 ```text
-
-StreamingVideo/csDronLink.dll
-
+TFG-Final/Demostradors/StreamingVideo/csDronLink.dll
 ```
 
 
 
-\## 3. Execució
+## 3. Execució
 
 
 
@@ -101,9 +95,7 @@ Per executar el projecte cal seguir aquests passos:
 
 
 ```bash
-
 git clone https://github.com/CarlaAbascal/TFG-Final.git
-
 ```
 
 
@@ -113,9 +105,7 @@ git clone https://github.com/CarlaAbascal/TFG-Final.git
 
 
 ```text
-
-TFG-Final/Demostradores/StreamingVideo/
-
+TFG-Final/Demostradors/StreamingVideo/
 ```
 
 
@@ -125,9 +115,7 @@ TFG-Final/Demostradores/StreamingVideo/
 
 
 ```text
-
 feature-webrtc/
-
 ```
 
 
@@ -137,9 +125,7 @@ feature-webrtc/
 
 
 ```bash
-
 python server.py
-
 ```
 
 
@@ -149,9 +135,7 @@ python server.py
 
 
 ```bash
-
-python script\_publisher.py
-
+python script_publisher.py
 ```
 
 
@@ -161,9 +145,7 @@ python script\_publisher.py
 
 
 ```text
-
 WindowsFormsApp1/WindowsFormsApp1.sln
-
 ```
 
 
@@ -176,7 +158,7 @@ WindowsFormsApp1/WindowsFormsApp1.sln
 
 
 
-\## 4. Possibles problemes
+## 4. Possibles problemes
 
 
 
@@ -186,7 +168,7 @@ Si el vídeo no es mostra, comprovar que:
 
 \* El servidor `server.py` està en execució.
 
-\* El publisher `script\_publisher.py` està en execució.
+\* El publisher `script_publisher.py` està en execució.
 
 \* El port `8080` no està ocupat per un altre procés.
 
@@ -200,7 +182,7 @@ Si el vídeo no es mostra, comprovar que:
 
 
 
-\## 5. Notes
+## 5. Notes
 
 
 
