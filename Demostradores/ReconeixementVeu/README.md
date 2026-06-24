@@ -1,8 +1,8 @@
-\# Reconeixement de veu
+# Reconeixement de veu
 
 
 
-\## 1. Presentació
+## 1. Presentació
 
 
 
@@ -36,7 +36,7 @@ girar 45 grados a la izquierda
 
 
 
-\## 2. Instal·lació
+## 2. Instal·lació
 
 
 
@@ -44,7 +44,7 @@ Per executar aquest projecte cal tenir instal·lat:
 
 
 
-1\. \*\*Visual Studio 2019 o Visual Studio 2022\*\*
+1\. **Visual Studio 2019 o Visual Studio 2022**
 
 &#x20;  Durant la instal·lació cal seleccionar la càrrega de treball:
 
@@ -90,7 +90,7 @@ TFG-Reconeixement-Veu/csDronLink.dll
 
 
 
-\## 3. Execució
+## 3. Execució
 
 
 
@@ -150,7 +150,7 @@ Compilar > Compilar solució
 
 
 
-\## 4. Possibles problemes
+## 4. Possibles problemes
 
 
 
@@ -166,7 +166,7 @@ Si l’aplicació no reconeix la veu, cal comprovar que el micròfon funciona co
 
 
 
-\## 5. Notes
+## 5. Notes
 
 
 
