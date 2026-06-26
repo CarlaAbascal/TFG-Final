@@ -50,10 +50,6 @@ El projecte també utilitza MQTT per enviar els gestos i objectes detectats cap 
 
 
 
-\---
-
-
-
 ## 2. Instal·lació
 
 
@@ -76,7 +72,7 @@ Desenvolupament d’escriptori amb .NET
 
 
 
-2\. **.NET Framework 4.7.2 Developer Pack**
+2\. .NET Framework 4.7.2 Developer Pack
 
 
 
