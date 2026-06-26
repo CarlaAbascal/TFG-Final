@@ -1,8 +1,8 @@
-\# Reconeixement de gestos i objectes
+# Reconeixement de gestos i objectes
 
 
 
-\## 1. Presentació
+## 1. Presentació
 
 
 
@@ -56,7 +56,7 @@ El projecte també utilitza MQTT per enviar els gestos i objectes detectats cap 
 
 
 
-\## 2. Instal·lació
+## 2. Instal·lació
 
 
 
@@ -64,7 +64,7 @@ Per executar aquest projecte cal tenir instal·lat:
 
 
 
-1\. \*Visual Studio 2019 o Visual Studio 2022\*
+1\. **Visual Studio 2019 o Visual Studio 2022**
 
 
 
@@ -73,9 +73,7 @@ Durant la instal·lació cal seleccionar la càrrega de treball:
 
 
 ```text
-
 Desenvolupament d’escriptori amb .NET
-
 ```
 
 
