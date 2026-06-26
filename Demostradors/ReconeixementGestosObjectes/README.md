@@ -19,11 +19,9 @@ El demostrador integra dues funcionalitats principals:
 
 
 ```text
-
 Reconeixement de gestos  → detecció de gestos de la mà amb MediaPipe
 
 Reconeixement d’objectes → detecció d’objectes amb YOLO
-
 ```
 
 
@@ -78,7 +76,7 @@ Desenvolupament d’escriptori amb .NET
 
 
 
-2\. \*.NET Framework 4.7.2 Developer Pack\*
+2\. **.NET Framework 4.7.2 Developer Pack**
 
 
 
@@ -86,7 +84,7 @@ El projecte està desenvolupat amb .NET Framework 4.7.2.
 
 
 
-3\. \*Python 3.10\*
+3\. **Python 3.10**
 
 
 
@@ -98,7 +96,7 @@ Es recomana utilitzar Python 3.10 perquè és compatible amb la versió de Media
 
 
 
-4\. \*Microsoft Edge WebView2 Runtime\*
+4\. **Microsoft Edge WebView2 Runtime**
 
 
 
@@ -106,7 +104,7 @@ Necessari perquè l’aplicació C# pugui mostrar el vídeo dins del formulari.
 
 
 
-5\. \*Càmera o webcam funcional\*
+5\. **Càmera o webcam funcional**
 
 
 
@@ -114,7 +112,7 @@ La càmera de l’ordinador s’utilitza per capturar el vídeo que després es 
 
 
 
-6\. \*Broker MQTT\*
+6\. **Broker MQTT**
 
 
 
@@ -126,7 +124,7 @@ Es pot utilitzar Mosquitto com a broker local.
 
 
 
-7\. \*Llibreria `csDronLink.dll`\*
+7\. **Llibreria `csDronLink.dll`**
 
 
 
@@ -135,19 +133,12 @@ Aquesta DLL ha d’estar situada a la carpeta principal del demostrador:
 
 
 ```text
-
 TFG-Final/Demostradors/ReconeixementGestosObjectes/csDronLink.dll
-
 ```
 
 
 
-
-
-
-
-\## 3. Preparació dels entorns virtuals
-
+## 3. Preparació dels entorns virtuals
 
 
 Aquest projecte utilitza dos entorns virtuals de Python:
@@ -155,11 +146,9 @@ Aquest projecte utilitza dos entorns virtuals de Python:
 
 
 ```text
-
 mp\_env        → servidor WebRTC, publisher de vídeo i detecció d’objectes
 
 gestos\_env310 → reconeixement de gestos amb MediaPipe
-
 ```
 
 
@@ -167,227 +156,114 @@ gestos\_env310 → reconeixement de gestos amb MediaPipe
 Els dos entorns s’han de crear dins de la carpeta principal del demostrador:
 
 
-
 ```text
-
 TFG-Final/Demostradors/ReconeixementGestosObjectes/
-
 ```
-
-
 
 El projecte inclou dos fitxers de dependències:
 
-
-
 ```text
-
 requirements\_mp.txt
-
 requirements\_gestos.txt
-
 ```
 
 
-
-
-
-
-
-\### 3.1 \*Crear l’entorn virtual `mp\_env`\*
-
-
+### 3.1 Crear l’entorn virtual `mp\_env`
 
 Aquest entorn s’utilitza per executar el servidor WebRTC, el publisher de vídeo i el reconeixement d’objectes.
-
 
 
 Obrir una terminal dins de la carpeta principal del demostrador:
 
 
-
 ```bat
-
 cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes
-
 ```
-
-
 
 Crear l’entorn virtual:
 
-
-
 ```bat
-
 py -3.10 -m venv mp\_env
-
 ```
-
-
 
 Activar l’entorn virtual:
 
-
-
 ```bat
-
 mp\_env\\Scripts\\activate
-
 ```
-
-
 
 Actualitzar `pip`:
 
-
-
 ```bat
-
 python -m pip install --upgrade pip
-
 ```
-
-
 
 Instal·lar les dependències:
 
-
-
 ```bat
-
 pip install -r requirements\_mp.txt
-
 ```
 
-
-
-
-
-
-
-\### 3.2 \*Crear l’entorn virtual `gestos\_env310`\*
-
-
+### 3.2 Crear l’entorn virtual `gestos\_env310`
 
 Aquest entorn s’utilitza per executar el reconeixement de gestos amb MediaPipe.
 
-
-
 Des de la carpeta principal del demostrador:
 
-
-
 ```bat
-
 cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes
-
 ```
-
-
 
 Crear l’entorn virtual:
 
-
-
 ```bat
-
 py -3.10 -m venv gestos\_env310
-
 ```
-
-
 
 Activar l’entorn virtual:
 
-
-
 ```bat
-
 gestos\_env310\\Scripts\\activate
-
 ```
-
-
 
 Actualitzar `pip`:
 
-
-
 ```bat
-
 python -m pip install --upgrade pip
-
 ```
-
-
 
 Instal·lar les dependències:
 
-
-
 ```bat
-
 pip install -r requirements\_gestos.txt
-
 ```
-
-
 
 El fitxer `requirements\_gestos.txt` fixa la versió de MediaPipe:
 
-
-
 ```text
-
 mediapipe==0.10.14
-
 ```
-
-
 
 Aquesta versió és necessària perquè el script de gestos utilitza l’API clàssica de MediaPipe:
 
-
-
 ```python
-
 mp.solutions.hands
-
 ```
-
-
 
 Per comprovar que MediaPipe està instal·lat correctament, es pot executar:
 
-
-
 ```bat
-
 python -c "import mediapipe as mp; print(mp.\_\_version\_\_); print(hasattr(mp,'solutions'))"
-
 ```
-
-
 
 El resultat correcte hauria de ser semblant a:
 
-
-
 ```text
-
 0.10.14
-
 True
-
 ```
 
-
-
-
-
-\## 4. Ubicació dels fitxers principals
-
+## 4. Ubicació dels fitxers principals
 
 
 Els fitxers principals del demostrador han d’estar situats a les carpetes següents.
