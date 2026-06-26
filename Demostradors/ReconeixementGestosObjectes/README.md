@@ -630,10 +630,10 @@ El flux recomanat d’execució és:
 
 
 ```text
-1\. Obrir el projecte a Visual Studio.
-2\. Executar l’aplicació.
-3\. Prémer Conectar.
-4\. Prémer Gestos o Objetos segons la funcionalitat que es vulgui provar.
+1. Obrir el projecte a Visual Studio.
+2. Executar l’aplicació.
+3. Prémer Conectar.
+4. Prémer Gestos o Objetos segons la funcionalitat que es vulgui provar.
 ```
 
 
