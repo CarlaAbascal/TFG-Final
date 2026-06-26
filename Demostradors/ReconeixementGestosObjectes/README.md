@@ -20,7 +20,6 @@ El demostrador integra dues funcionalitats principals:
 
 ```text
 Reconeixement de gestos  → detecció de gestos de la mà amb MediaPipe
-
 Reconeixement d’objectes → detecció d’objectes amb YOLO
 ```
 
@@ -31,17 +30,11 @@ Els gestos principals utilitzats són:
 
 
 ```text
-
 Palma   → Despegar
-
 Puño    → Aterrizar
-
 Uno     → Avanzar
-
 Dos     → Girar a la derecha
-
 Tres    → Girar a la izquierda
-
 ```
 
 
@@ -72,7 +65,7 @@ Desenvolupament d’escriptori amb .NET
 
 
 
-2\. .NET Framework 4.7.2 Developer Pack
+2\. **.NET Framework 4.7.2 Developer Pack**
 
 
 
@@ -143,7 +136,6 @@ Aquest projecte utilitza dos entorns virtuals de Python:
 
 ```text
 mp\_env        → servidor WebRTC, publisher de vídeo i detecció d’objectes
-
 gestos\_env310 → reconeixement de gestos amb MediaPipe
 ```
 
@@ -264,673 +256,329 @@ True
 
 Els fitxers principals del demostrador han d’estar situats a les carpetes següents.
 
-
-
 La llibreria del dron ha d’estar a:
-
-
 
 ```text
 TFG-Final/Demostradors/ReconeixementGestos/csDronLink.dll
 ```
 
-
-
 Els scripts del servidor WebRTC han d’estar a:
 
-
-
 ```text
-
-TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/server.py TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/script\_publisher.py
-
+TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/server.py
+TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/script\_publisher.py
 ```
-
-
 
 Els scripts de gestos i objectes han d’estar a:
 
-
-
 ```text
-
 TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/WindowsFormsApp1/detectar\_mano\_mp.py
-
 TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/WindowsFormsApp1/detectarObjetos.py
-
 ```
-
-
-
-
 
 També han d’estar disponibles els fitxers auxiliars necessaris per als models de detecció, com ara:
 
-
-
 ```text
-
 hand\_landmarker.task
-
 yolov8n.pt
-
 ```
-
-
 
 Aquests fitxers han d’estar dins de la carpeta del projecte C#:
 
-
-
 ```text
-
 WindowsFormsApp1/WindowsFormsApp1/
-
 ```
 
 
-
-
-
-
-
-\## 5. Execució
-
-
+## 5. Execució
 
 Per executar el projecte cal seguir aquests passos:
 
-
-
-\### 1. Descarregar o clonar el repositori principal `TFG-Final`
-
-
+### 1. Descarregar o clonar el repositori principal `TFG-Final`
 
 ```bash
-
 git clone https://github.com/CarlaAbascal/TFG-Final.git
-
 ```
 
-
-
-\### 2. Entrar a la carpeta del demostrador
-
-
+### 2. Entrar a la carpeta del demostrador
 
 ```text
-
 TFG-Final/Demostradors/ReconeixementGestosObjectes/
-
 ```
 
 
 
-\### 3. Crear els entorns virtuals
-
-
+### 3. Crear els entorns virtuals
 
 Abans d’executar l’aplicació, cal haver creat els dos entorns virtuals explicats a l’apartat anterior:
 
-
-
 ```text
-
 mp\_env
-
 gestos\_env310
-
 ```
 
-
-
-\### 4. Obrir el projecte amb Visual Studio
-
-
+### 4. Obrir el projecte amb Visual Studio
 
 Obrir amb Visual Studio el fitxer de solució:
 
-
-
 ```text
-
 WindowsFormsApp1/WindowsFormsApp1.sln
-
 ```
 
-
-
-\### 5. Comprovar la ubicació de `csDronLink.dll`
-
-
+### 5. Comprovar la ubicació de `csDronLink.dll`
 
 El fitxer `csDronLink.dll` ha d’estar situat a:
 
-
-
 ```text
-
 TFG-Final/Demostradors/ReconeixementGestosObjectes/csDronLink.dll
-
 ```
 
-
-
-\### 6. Compilar i executar l’aplicació
-
-
+### 6. Compilar i executar l’aplicació
 
 Des de Visual Studio, compilar i executar el projecte.
 
-
-
-\### 7. Prémer el botó `Conectar`
-
-
+### 7. Prémer el botó `Conectar`
 
 Dins de l’aplicació, prémer el botó:
 
-
-
 ```text
-
 Conectar
-
 ```
-
-
 
 Aquest botó realitza les accions següents:
 
-
-
 ```text
-
 1\. Connecta el dron en mode simulació.
-
 2\. Sol·licita la telemetria.
-
 3\. Inicia el servidor WebRTC.
-
 4\. Inicia el publisher de vídeo.
-
 5\. Deixa disponible el stream de vídeo.
-
 ```
-
-
 
 No cal executar manualment `server.py` ni `script\_publisher.py`, ja que l’aplicació els inicia automàticament.
 
-
-
 Si tot funciona correctament, al registre de l’aplicació apareixeran missatges semblants a aquests:
 
-
-
 ```text
-
 \[INFO] Iniciando servidor WebRTC y publisher de vídeo...
-
 \[INFO] Iniciando server.py...
-
 \[OK] server.py iniciado en puerto 8080.
-
 \[INFO] Iniciando script\_publisher.py...
-
 \[OK] Stream WebRTC/MJPEG disponible.
-
 \[OK] Server y publisher preparados.
-
 ```
 
-
-
-\### 8. Executar el reconeixement de gestos
-
-
+### 8. Executar el reconeixement de gestos
 
 Per iniciar el reconeixement de gestos, prémer el botó:
 
-
-
 ```text
-
 Gestos
-
 ```
-
-
 
 Aquest botó executa el script:
 
-
-
 ```text
-
 detectar\_mano\_mp.py
-
 ```
-
-
 
 amb l’entorn virtual:
 
-
-
 ```text
-
 gestos\_env310
-
 ```
-
-
 
 Si funciona correctament, al registre apareixeran missatges semblants a:
 
-
-
 ```text
-
 \[INFO] Cargando reconocimiento de gestos...
-
 \[INFO] Iniciando detectar\_mano\_mp.py...
-
 \[GESTOS] === SCRIPT GESTOS MEDIAPIPE INICIADO ===
-
 \[GESTOS] \[OK] Conectado al broker MQTT (gestos)
-
 ```
-
-
 
 El vídeo de gestos queda disponible a:
 
-
-
 ```text
-
 http://127.0.0.1:8090/
-
 ```
 
-
-
-\### 9. Executar el reconeixement d’objectes
-
-
+### 9. Executar el reconeixement d’objectes
 
 Per iniciar la detecció d’objectes, prémer el botó:
 
-
-
 ```text
-
 Objetos
-
 ```
-
-
 
 Aquest botó executa el script:
 
-
-
 ```text
-
 detectarObjetos.py
-
 ```
-
-
 
 amb l’entorn virtual:
 
-
-
 ```text
-
 mp\_env
-
 ```
-
-
 
 El sistema detecta objectes amb YOLO i envia els resultats a l’aplicació mitjançant MQTT.
 
-
-
-\### 10. Visualització del vídeo
-
-
+### 10. Visualització del vídeo
 
 El vídeo principal del servidor WebRTC/MJPEG queda disponible a:
 
-
-
 ```text
-
 http://127.0.0.1:8080/
-
 ```
-
-
 
 El vídeo del reconeixement de gestos queda disponible a:
 
-
-
 ```text
-
 http://127.0.0.1:8090/
-
 ```
 
-
-
-\---
-
-
-
-\## 6. Possibles problemes
-
-
+## 6. Possibles problemes
 
 Si el demostrador no funciona correctament, comprovar els punts següents.
 
-
-
-\### Error amb `mp\_env`
-
-
+### Error amb `mp\_env`
 
 Si apareix un error semblant a:
 
-
-
 ```text
-
 \[ERROR] No existe python mp\_env:
-
 ...\\ReconeixementGestosObjectes\\mp\_env\\Scripts\\python.exe
-
 ```
-
-
 
 vol dir que falta crear l’entorn virtual `mp\_env`.
 
-
-
 Solució:
 
-
-
 ```bat
-
 cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes 
-
 py -3.10 -m 
-
 venv mp\_env mp\_env\\Scripts\\activate 
-
 python -m pip install --upgrade pip 
-
 pip install -r requirements\_mp.txt
-
 ```
 
-
-
-
-
-\### Error amb `gestos\_env310`
-
-
+### Error amb `gestos\_env310`
 
 Si apareix un error indicant que no existeix l’entorn de gestos, cal crear-lo de nou:
 
-
-
 ```bat
-
 cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes
-
 py -3.10 -m venv gestos\_env310
-
 gestos\_env310\\Scripts\\activate
-
 python -m pip install --upgrade pip
-
 pip install -r requirements\_gestos.txt
-
 ```
 
-
-
-\### Error amb `detectar\_mano\_mp.py` o `detectarObjetos.py`
-
-
+### Error amb `detectar\_mano\_mp.py` o `detectarObjetos.py`
 
 Si apareix un error indicant que no existeix algun dels scripts:
 
-
-
 ```text
-
 No existe detectar\_mano\_mp.py
-
 No existe detectarObjetos.py
-
 ```
-
-
 
 cal comprovar que es troben dins de la carpeta:
 
-
-
 ```text
-
 WindowsFormsApp1/WindowsFormsApp1/
-
 ```
-
-
 
 Concretament:
 
-
-
 ```text
-
 WindowsFormsApp1/WindowsFormsApp1/detectar\_mano\_mp.py
-
 WindowsFormsApp1/WindowsFormsApp1/detectarObjetos.py
-
 ```
 
-
-
-
-
-
-
-\### Error de MediaPipe
-
-
+### Error de MediaPipe
 
 Si apareix aquest error:
 
-
-
 ```text
-
 AttributeError: module 'mediapipe' has no attribute 'solutions'
-
 ```
-
-
 
 vol dir que s’ha instal·lat una versió massa nova de MediaPipe.
 
-
-
 Solució:
 
-
-
 ```bat
-
 gestos\_env310\\Scripts\\activate
-
 pip uninstall mediapipe -y
-
 pip install mediapipe==0.10.14
-
 ```
-
-
 
 Després, comprovar la instal·lació:
 
 
-
 ```bat
-
 python -c "import mediapipe as mp; print(mp.\_\_version\_\_); print(hasattr(mp,'solutions'))"
-
 ```
-
-
 
 El resultat correcte ha de ser:
 
-
-
 ```text
-
 0.10.14
-
 True
-
 ```
 
-
-
-
-
-
-
-\### El servidor de gestos no respon
-
-
+### El servidor de gestos no respon
 
 Si apareix aquest error:
 
-
-
 ```text
-
 \[ERROR] El servidor de gestos no responde en http://127.0.0.1:8090/
-
 ```
-
-
 
 normalment vol dir que el script `detectar\_mano\_mp.py` ha fallat abans d’aixecar el servidor.
 
-
-
 Cal revisar els missatges que apareixen al registre amb l’etiqueta:
 
-
-
 ```text
-
 \[GESTOS]
-
 ```
-
-
 
 Els motius més habituals són:
 
-
-
 ```text
-
 MediaPipe mal instal·lat
-
 Càmera ocupada per una altra aplicació
-
 Broker MQTT no iniciat
-
 Falta algun fitxer auxiliar
-
 ```
 
-
-
-
-
-
-
-\### El port 8080 o 8090 està ocupat
-
-
+### El port 8080 o 8090 està ocupat
 
 Si algun port està ocupat, es pot comprovar amb:
 
-
-
 ```bat
-
 netstat -ano | findstr :8080
-
 ```
-
-
 
 o:
 
-
-
 ```bat
-
 netstat -ano | findstr :8090
-
 ```
-
-
 
 Per tancar el procés que està utilitzant el port:
 
-
-
 ```bat
-
 taskkill /PID NUMERO\_PID /F
-
 ```
-
-
-
 Substituint `NUMERO\_PID` pel número que apareix al resultat del `netstat`.
 
-
-
-
-
-
-
-\### La càmera no funciona
-
-
+### La càmera no funciona
 
 Si la càmera no s’obre, comprovar que:
-
-
 
 \* La webcam està connectada.
 
@@ -941,18 +589,9 @@ Si la càmera no s’obre, comprovar que:
 \* No hi ha obertes aplicacions com Teams, Zoom, OBS o el navegador utilitzant la càmera.
 
 
-
-
-
-
-
-\### El vídeo no es mostra dins de l’aplicació
-
-
+### El vídeo no es mostra dins de l’aplicació
 
 Si el vídeo no es mostra dins del formulari, comprovar que:
-
-
 
 \* WebView2 Runtime està instal·lat.
 
@@ -968,11 +607,7 @@ Si el vídeo no es mostra dins del formulari, comprovar que:
 
 
 
-
-
-
-
-\## 7. Notes
+## 7. Notes
 
 
 
@@ -985,9 +620,7 @@ No cal descarregar cap altre repositori extern, ja que tots els fitxers necessar
 
 
 ```text
-
 ReconeixementGestosObjectes
-
 ```
 
 
@@ -997,15 +630,10 @@ El flux recomanat d’execució és:
 
 
 ```text
-
 1\. Obrir el projecte a Visual Studio.
-
 2\. Executar l’aplicació.
-
 3\. Prémer Conectar.
-
 4\. Prémer Gestos o Objetos segons la funcionalitat que es vulgui provar.
-
 ```
 
 
@@ -1015,11 +643,8 @@ Els entorns virtuals han de mantenir exactament aquests noms:
 
 
 ```text
-
 mp\_env
-
 gestos\_env310
-
 ```
 
 
@@ -1029,11 +654,8 @@ Aquests noms són importants perquè l’aplicació C# busca els executables de 
 
 
 ```text
-
 ReconeixementGestosObjectes/mp\_env/Scripts/python.exe
-
 ReconeixementGestosObjectes/gestos\_env310/Scripts/python.exe
-
 ```
 
 
@@ -1051,19 +673,12 @@ Aquests fitxers de requeriments permeten reconstruir els entorns virtuals fàcil
 
 
 ```text
-
 opencv-python
-
 paho-mqtt
-
 aiohttp
-
 aiortc
-
 av
-
 ultralytics
-
 ```
 
 
@@ -1073,15 +688,10 @@ ultralytics
 
 
 ```text
-
 opencv-python
-
 mediapipe==0.10.14
-
 paho-mqtt
-
 aiohttp
-
 ```
 
 
