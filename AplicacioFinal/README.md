@@ -315,11 +315,11 @@ Dins de l’aplicació, prémer el botó **Conectar**
 Aquest botó realitza les accions següents:
 
 ```text
-1\. Connecta el dron en mode simulació.
-2\. Sol·licita la telemetria.
-3\. Inicia el servidor WebRTC.
-4\. Inicia el publisher de vídeo.
-5\. Deixa disponible el stream de vídeo.
+1. Connecta el dron en mode simulació.
+2. Sol·licita la telemetria.
+3. Inicia el servidor WebRTC.
+4. Inicia el publisher de vídeo.
+5. Deixa disponible el stream de vídeo.
 ```
 Quan la connexió s’ha iniciat correctament, el vídeo capturat per la càmera es mostra dins del formulari mitjançant WebView2.
 
@@ -482,7 +482,7 @@ gestos_env310
 
 Aquest projecte està pensat per executar-se de manera independent dins del repositori `TFG-Final`.
 
-No cal descarregar cap altre repositori extern, ja que tots els fitxers necessaris per executar l’aplicació final han d’estar inclosos dins de la carpeta `AplicacioFinal`.
+No cal descarregar cap altre repositori extern, ja que tots els fitxers necessaris per executar l’aplicació final estan inclosos dins de la carpeta `AplicacioFinal`.
 
 Els entorns virtuals de Python no s’han de pujar al repositori. Cada usuari els ha de crear localment seguint els passos d’instal·lació.
 
