@@ -37,7 +37,7 @@ Aquesta aplicació integra les funcionalitats principals desenvolupades durant e
 
 Conté la documentació relacionada amb l’ús de MQTT dins del projecte.
 
-MQTT s’utilitza com a mecanisme de comunicació entre alguns scripts auxiliars en Python i les aplicacions desenvolupades en C#.
+Aquesta carpeta no correspon a un demostrador executable de manera independent, sinó que explica el funcionament de la comunicació MQTT utilitzada principalment dins del demostrador de reconeixement de gestos i detecció d’objectes, i també dins de l’aplicació final.
 
 ### Demostradors/ReconeixementGestosObjectes
 
