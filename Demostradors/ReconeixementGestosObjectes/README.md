@@ -348,11 +348,11 @@ Conectar
 Aquest botó realitza les accions següents:
 
 ```text
-1\. Connecta el dron en mode simulació.
-2\. Sol·licita la telemetria.
-3\. Inicia el servidor WebRTC.
-4\. Inicia el publisher de vídeo.
-5\. Deixa disponible el stream de vídeo.
+1. Connecta el dron en mode simulació.
+2. Sol·licita la telemetria.
+3. Inicia el servidor WebRTC.
+4. Inicia el publisher de vídeo.
+5. Deixa disponible el stream de vídeo.
 ```
 
 No cal executar manualment `server.py` ni `script_publisher.py`, ja que l’aplicació els inicia automàticament.
@@ -360,12 +360,12 @@ No cal executar manualment `server.py` ni `script_publisher.py`, ja que l’apli
 Si tot funciona correctament, al registre de l’aplicació apareixeran missatges semblants a aquests:
 
 ```text
-\[INFO] Iniciando servidor WebRTC y publisher de vídeo...
-\[INFO] Iniciando server.py...
-\[OK] server.py iniciado en puerto 8080.
-\[INFO] Iniciando script_publisher.py...
-\[OK] Stream WebRTC/MJPEG disponible.
-\[OK] Server y publisher preparados.
+[INFO] Iniciando servidor WebRTC y publisher de vídeo...
+[INFO] Iniciando server.py...
+[OK] server.py iniciado en puerto 8080.
+[INFO] Iniciando script_publisher.py...
+[OK] Stream WebRTC/MJPEG disponible.
+[OK] Server y publisher preparados.
 ```
 
 ### 8. Executar el reconeixement de gestos
@@ -391,10 +391,10 @@ gestos_env310
 Si funciona correctament, al registre apareixeran missatges semblants a:
 
 ```text
-\[INFO] Cargando reconocimiento de gestos...
-\[INFO] Iniciando detectar_mano_mp.py...
-\[GESTOS] === SCRIPT GESTOS MEDIAPIPE INICIADO ===
-\[GESTOS] \[OK] Conectado al broker MQTT (gestos)
+[INFO] Cargando reconocimiento de gestos...
+[INFO] Iniciando detectar_mano_mp.py...
+[GESTOS] === SCRIPT GESTOS MEDIAPIPE INICIADO ===
+[GESTOS] \[OK] Conectado al broker MQTT (gestos)
 ```
 
 El vídeo de gestos queda disponible a:
@@ -448,7 +448,7 @@ Si el demostrador no funciona correctament, comprovar els punts següents.
 Si apareix un error semblant a:
 
 ```text
-\[ERROR] No existe python mp_env:
+[ERROR] No existe python mp_env:
 ...\\ReconeixementGestosObjectes\\mp_env\\Scripts\\python.exe
 ```
 
@@ -535,7 +535,7 @@ True
 Si apareix aquest error:
 
 ```text
-\[ERROR] El servidor de gestos no responde en http://127.0.0.1:8090/
+[ERROR] El servidor de gestos no responde en http://127.0.0.1:8090/
 ```
 
 normalment vol dir que el script `detectar_mano_mp.py` ha fallat abans d’aixecar el servidor.
@@ -580,30 +580,22 @@ Substituint `NUMERO\_PID` pel número que apareix al resultat del `netstat`.
 
 Si la càmera no s’obre, comprovar que:
 
-\* La webcam està connectada.
-
-\* La càmera no està sent utilitzada per una altra aplicació.
-
-\* Python té permisos per accedir a la càmera.
-
-\* No hi ha obertes aplicacions com Teams, Zoom, OBS o el navegador utilitzant la càmera.
+* La webcam està connectada.
+* La càmera no està sent utilitzada per una altra aplicació.
+* Python té permisos per accedir a la càmera.
+* No hi ha obertes aplicacions com Teams, Zoom, OBS o el navegador utilitzant la càmera.
 
 
 ### El vídeo no es mostra dins de l’aplicació
 
 Si el vídeo no es mostra dins del formulari, comprovar que:
 
-\* WebView2 Runtime està instal·lat.
-
-\* `server.py` s’ha iniciat correctament.
-
-\* `script_publisher.py` s’ha iniciat correctament.
-
-\* El port 8080 no està ocupat.
-
-\* La càmera està disponible.
-
-\* L’aplicació s’ha connectat correctament abans de prémer `Gestos` o `Objetos`.
+* WebView2 Runtime està instal·lat.
+* `server.py` s’ha iniciat correctament.
+* `script_publisher.py` s’ha iniciat correctament.
+* El port 8080 no està ocupat.
+* La càmera està disponible.
+* L’aplicació s’ha connectat correctament abans de prémer `Gestos` o `Objetos`.
 
 
 
