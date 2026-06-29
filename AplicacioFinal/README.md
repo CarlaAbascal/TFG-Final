@@ -249,19 +249,19 @@ Aquests entorns virtuals són necessaris per executar els scripts de Python, per
 
 Per executar el projecte cal seguir aquests passos:
 
-1/. Descarregar o clonar el repositori principal `TFG-Final`
+1\. Descarregar o clonar el repositori principal `TFG-Final`
 
 ```bash
 git clone https://github.com/CarlaAbascal/TFG-Final.git
 ```
 
-2/. Entrar a la carpeta de l'aplicació:
+2\. Entrar a la carpeta de l'aplicació:
 
 ```bash
 TFG-Final\AplicacioFinal
 ```
 
-3/. Crear els entorns virtuals
+3\. Crear els entorns virtuals
 
 Abans d’executar l’aplicació, cal haver creat els dos entorns virtuals explicats a l’apartat anterior:
 
@@ -270,7 +270,7 @@ mp_env
 gestos_env310
 ```
 
-4/. Obrir el projecte amb Visual Studio
+4\. Obrir el projecte amb Visual Studio
 
 Obrir amb Visual Studio el fitxer de solució:
 
@@ -278,7 +278,7 @@ Obrir amb Visual Studio el fitxer de solució:
 WindowsFormsApp1/WindowsFormsApp1.sln
 ```
 
-5/. Comprovar la ubicació de `csDronLink.dll`
+5\. Comprovar la ubicació de `csDronLink.dll`
 
 El fitxer `csDronLink.dll` ha d’estar situat a:
 
@@ -286,7 +286,7 @@ El fitxer `csDronLink.dll` ha d’estar situat a:
 TFG-Final/AplicacioFinal/csDronLink.dll
 ```
 
-6/. Restaurar els paquets NuGet
+6\. Restaurar els paquets NuGet
 
 En obrir la solució amb Visual Studio, normalment els paquets NuGet es restauren automàticament.
 
@@ -296,7 +296,7 @@ Si no es restauren automàticament, cal fer clic dret sobre la solució `Windows
 Restore NuGet Packages
 ```
 
-7/. Comprovar el broker MQTT
+7\. Comprovar el broker MQTT
 
 Abans d’executar l’aplicació, comprovar que el broker MQTT està actiu en local:
 
@@ -304,11 +304,11 @@ Abans d’executar l’aplicació, comprovar que el broker MQTT està actiu en l
 127.0.0.1:1883
 ```
 
-8/. Compilar i executar l’aplicació
+8\. Compilar i executar l’aplicació
 
 Des de Visual Studio, compilar i executar el projecte.
 
-9/. Connectar el sistema
+9\. Connectar el sistema
 
 Dins de l’aplicació, prémer el botó **Conectar**
 
@@ -323,7 +323,7 @@ Aquest botó realitza les accions següents:
 ```
 Quan la connexió s’ha iniciat correctament, el vídeo capturat per la càmera es mostra dins del formulari mitjançant WebView2.
 
-10/. Activar el reconeixement de gestos
+10\. Activar el reconeixement de gestos
 
 Per activar el reconeixement de gestos, prémer el botó **Gestos**.
 
@@ -337,13 +337,13 @@ Dos   → Girar a la derecha
 Tres  → Girar a la izquierda
 ```
 
-11/. Activar la detecció d’objectes
+11\. Activar la detecció d’objectes
 
 Per activar la detecció d’objectes, prémer el botó **Objetos**.
 
 El sistema executa el script de detecció d’objectes i envia a l’aplicació la informació dels objectes detectats mitjançant MQTT.
 
-12/. Activar el reconeixement de veu
+12\. Activar el reconeixement de veu
 
 Per activar el reconeixement de veu, prémer el botó **Activar voz**.
 
@@ -360,7 +360,7 @@ girar 45 grados a la izquierda
 
 En alguns casos, si falta algun paràmetre, l’aplicació pot demanar informació addicional. Per exemple, si l’usuari diu “avanza”, el sistema pot demanar quants metres ha d’avançar.
 
-13/. Capturar imatges i gravar vídeo
+13\. Capturar imatges i gravar vídeo
 
 L’aplicació també permet:
 
@@ -371,7 +371,7 @@ Gravar vídeo en format WEBM
 
 Els fitxers generats es desen a la carpeta de descàrregues de l’usuari.
 
-14/. Aturar els processos auxiliars
+14\. Aturar els processos auxiliars
 
 Per aturar els processos auxiliars, prémer el botó **Detener**.
 
