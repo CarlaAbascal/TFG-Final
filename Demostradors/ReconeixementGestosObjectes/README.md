@@ -135,8 +135,8 @@ Aquest projecte utilitza dos entorns virtuals de Python:
 
 
 ```text
-mp\_env        → servidor WebRTC, publisher de vídeo i detecció d’objectes
-gestos\_env310 → reconeixement de gestos amb MediaPipe
+mp_env        → servidor WebRTC, publisher de vídeo i detecció d’objectes
+gestos_env310 → reconeixement de gestos amb MediaPipe
 ```
 
 
@@ -151,12 +151,12 @@ TFG-Final/Demostradors/ReconeixementGestosObjectes/
 El projecte inclou dos fitxers de dependències:
 
 ```text
-requirements\_mp.txt
-requirements\_gestos.txt
+requirements_mp.txt
+requirements_gestos.txt
 ```
 
 
-### 3.1 Crear l’entorn virtual `mp\_env`
+### 3.1 Crear l’entorn virtual `mp_env`
 
 Aquest entorn s’utilitza per executar el servidor WebRTC, el publisher de vídeo i el reconeixement d’objectes.
 
@@ -165,13 +165,13 @@ Obrir una terminal dins de la carpeta principal del demostrador:
 
 
 ```bat
-cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes
+cd TFG-Final\Demostradors\ReconeixementGestosObjectes
 ```
 
 Crear l’entorn virtual:
 
 ```bat
-py -3.10 -m venv mp\_env
+py -3.10 -m venv mp_env
 ```
 
 Activar l’entorn virtual:
@@ -189,23 +189,23 @@ python -m pip install --upgrade pip
 Instal·lar les dependències:
 
 ```bat
-pip install -r requirements\_mp.txt
+pip install -r requirements_mp.txt
 ```
 
-### 3.2 Crear l’entorn virtual `gestos\_env310`
+### 3.2 Crear l’entorn virtual `gestos_env310`
 
 Aquest entorn s’utilitza per executar el reconeixement de gestos amb MediaPipe.
 
 Des de la carpeta principal del demostrador:
 
 ```bat
-cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes
+cd TFG-Final\Demostradors\ReconeixementGestosObjectes
 ```
 
 Crear l’entorn virtual:
 
 ```bat
-py -3.10 -m venv gestos\_env310
+py -3.10 -m venv gestos_env310
 ```
 
 Activar l’entorn virtual:
@@ -223,10 +223,10 @@ python -m pip install --upgrade pip
 Instal·lar les dependències:
 
 ```bat
-pip install -r requirements\_gestos.txt
+pip install -r requirements_gestos.txt
 ```
 
-El fitxer `requirements\_gestos.txt` fixa la versió de MediaPipe:
+El fitxer `requirements_gestos.txt` fixa la versió de MediaPipe:
 
 ```text
 mediapipe==0.10.14
@@ -266,20 +266,20 @@ Els scripts del servidor WebRTC han d’estar a:
 
 ```text
 TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/server.py
-TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/script\_publisher.py
+TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/feature-webrtc/script_publisher.py
 ```
 
 Els scripts de gestos i objectes han d’estar a:
 
 ```text
-TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/WindowsFormsApp1/detectar\_mano\_mp.py
+TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/WindowsFormsApp1/detectar_mano_mp.py
 TFG-Final/Demostradors/ReconeixementGestosObjectes/WindowsFormsApp1/WindowsFormsApp1/detectarObjetos.py
 ```
 
 També han d’estar disponibles els fitxers auxiliars necessaris per als models de detecció, com ara:
 
 ```text
-hand\_landmarker.task
+hand_landmarker.task
 yolov8n.pt
 ```
 
@@ -313,8 +313,8 @@ TFG-Final/Demostradors/ReconeixementGestosObjectes/
 Abans d’executar l’aplicació, cal haver creat els dos entorns virtuals explicats a l’apartat anterior:
 
 ```text
-mp\_env
-gestos\_env310
+mp_env
+gestos_env310
 ```
 
 ### 4. Obrir el projecte amb Visual Studio
@@ -355,7 +355,7 @@ Aquest botó realitza les accions següents:
 5\. Deixa disponible el stream de vídeo.
 ```
 
-No cal executar manualment `server.py` ni `script\_publisher.py`, ja que l’aplicació els inicia automàticament.
+No cal executar manualment `server.py` ni `script_publisher.py`, ja que l’aplicació els inicia automàticament.
 
 Si tot funciona correctament, al registre de l’aplicació apareixeran missatges semblants a aquests:
 
@@ -363,7 +363,7 @@ Si tot funciona correctament, al registre de l’aplicació apareixeran missatge
 \[INFO] Iniciando servidor WebRTC y publisher de vídeo...
 \[INFO] Iniciando server.py...
 \[OK] server.py iniciado en puerto 8080.
-\[INFO] Iniciando script\_publisher.py...
+\[INFO] Iniciando script_publisher.py...
 \[OK] Stream WebRTC/MJPEG disponible.
 \[OK] Server y publisher preparados.
 ```
@@ -379,20 +379,20 @@ Gestos
 Aquest botó executa el script:
 
 ```text
-detectar\_mano\_mp.py
+detectar_mano_mp.py
 ```
 
 amb l’entorn virtual:
 
 ```text
-gestos\_env310
+gestos_env310
 ```
 
 Si funciona correctament, al registre apareixeran missatges semblants a:
 
 ```text
 \[INFO] Cargando reconocimiento de gestos...
-\[INFO] Iniciando detectar\_mano\_mp.py...
+\[INFO] Iniciando detectar_mano_mp.py...
 \[GESTOS] === SCRIPT GESTOS MEDIAPIPE INICIADO ===
 \[GESTOS] \[OK] Conectado al broker MQTT (gestos)
 ```
@@ -420,7 +420,7 @@ detectarObjetos.py
 amb l’entorn virtual:
 
 ```text
-mp\_env
+mp_env
 ```
 
 El sistema detecta objectes amb YOLO i envia els resultats a l’aplicació mitjançant MQTT.
@@ -443,45 +443,45 @@ http://127.0.0.1:8090/
 
 Si el demostrador no funciona correctament, comprovar els punts següents.
 
-### Error amb `mp\_env`
+### Error amb `mp_env`
 
 Si apareix un error semblant a:
 
 ```text
-\[ERROR] No existe python mp\_env:
-...\\ReconeixementGestosObjectes\\mp\_env\\Scripts\\python.exe
+\[ERROR] No existe python mp_env:
+...\\ReconeixementGestosObjectes\\mp_env\\Scripts\\python.exe
 ```
 
-vol dir que falta crear l’entorn virtual `mp\_env`.
+vol dir que falta crear l’entorn virtual `mp_env`.
 
 Solució:
 
 ```bat
-cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes 
+cd TFG-Final\Demostradors\ReconeixementGestosObjectes 
 py -3.10 -m 
-venv mp\_env mp\_env\\Scripts\\activate 
+venv mp_env mp_env\Scripts\activate 
 python -m pip install --upgrade pip 
 pip install -r requirements\_mp.txt
 ```
 
-### Error amb `gestos\_env310`
+### Error amb `gestos_env310`
 
 Si apareix un error indicant que no existeix l’entorn de gestos, cal crear-lo de nou:
 
 ```bat
-cd TFG-Final\\Demostradors\\ReconeixementGestosObjectes
-py -3.10 -m venv gestos\_env310
-gestos\_env310\\Scripts\\activate
+cd TFG-Final\Demostradors\ReconeixementGestosObjectes
+py -3.10 -m venv gestos_env310
+gestos_env310\Scripts\activate
 python -m pip install --upgrade pip
-pip install -r requirements\_gestos.txt
+pip install -r requirements_gestos.txt
 ```
 
-### Error amb `detectar\_mano\_mp.py` o `detectarObjetos.py`
+### Error amb `detectar_mano_mp.py` o `detectarObjetos.py`
 
 Si apareix un error indicant que no existeix algun dels scripts:
 
 ```text
-No existe detectar\_mano\_mp.py
+No existe detectar_mano_mp.py
 No existe detectarObjetos.py
 ```
 
@@ -494,7 +494,7 @@ WindowsFormsApp1/WindowsFormsApp1/
 Concretament:
 
 ```text
-WindowsFormsApp1/WindowsFormsApp1/detectar\_mano\_mp.py
+WindowsFormsApp1/WindowsFormsApp1/detectar_mano_mp.py
 WindowsFormsApp1/WindowsFormsApp1/detectarObjetos.py
 ```
 
@@ -511,7 +511,7 @@ vol dir que s’ha instal·lat una versió massa nova de MediaPipe.
 Solució:
 
 ```bat
-gestos\_env310\\Scripts\\activate
+gestos_env310\Scripts\activate
 pip uninstall mediapipe -y
 pip install mediapipe==0.10.14
 ```
@@ -538,7 +538,7 @@ Si apareix aquest error:
 \[ERROR] El servidor de gestos no responde en http://127.0.0.1:8090/
 ```
 
-normalment vol dir que el script `detectar\_mano\_mp.py` ha fallat abans d’aixecar el servidor.
+normalment vol dir que el script `detectar_mano_mp.py` ha fallat abans d’aixecar el servidor.
 
 Cal revisar els missatges que apareixen al registre amb l’etiqueta:
 
@@ -597,7 +597,7 @@ Si el vídeo no es mostra dins del formulari, comprovar que:
 
 \* `server.py` s’ha iniciat correctament.
 
-\* `script\_publisher.py` s’ha iniciat correctament.
+\* `script_publisher.py` s’ha iniciat correctament.
 
 \* El port 8080 no està ocupat.
 
@@ -643,8 +643,8 @@ Els entorns virtuals han de mantenir exactament aquests noms:
 
 
 ```text
-mp\_env
-gestos\_env310
+mp_env
+gestos_env310
 ```
 
 
@@ -654,8 +654,8 @@ Aquests noms són importants perquè l’aplicació C# busca els executables de 
 
 
 ```text
-ReconeixementGestosObjectes/mp\_env/Scripts/python.exe
-ReconeixementGestosObjectes/gestos\_env310/Scripts/python.exe
+ReconeixementGestosObjectes/mp_env/Scripts/python.exe
+ReconeixementGestosObjectes/gestos_env310/Scripts/python.exe
 ```
 
 
@@ -668,7 +668,7 @@ Aquests fitxers de requeriments permeten reconstruir els entorns virtuals fàcil
 
 
 
-`requirements\_mp.txt`
+`requirements_mp.txt`
 
 
 
@@ -683,7 +683,7 @@ ultralytics
 
 
 
-`requirements\_gestos.txt`
+`requirements_gestos.txt`
 
 
 
