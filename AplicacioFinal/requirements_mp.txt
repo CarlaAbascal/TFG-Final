@@ -1,0 +1,6 @@
+opencv-python
+paho-mqtt
+aiohttp
+aiortc
+av
+ultralytics
