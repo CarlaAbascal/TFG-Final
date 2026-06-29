@@ -131,9 +131,9 @@ Algunes comandes possibles són:
 conectar
 despegar
 aterrizar
-avanzar cinco metros
-girar noventa grados a la derecha
-girar cuarenta y cinco grados a la izquierda
+avanzar 5 metros
+girar 90 grados a la derecha
+girar 45 grados a la izquierda
 ```
 
 Si una comanda necessita un valor concret, com una distància o uns graus, l’aplicació pot demanar informació addicional.
