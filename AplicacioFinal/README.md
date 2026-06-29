@@ -10,9 +10,8 @@ El vídeo es mostra dins del formulari mitjançant **WebView2**, mentre que les 
 
 ## 2. Instal·lació
 
-Per executar aquest projecte cal tenir instal·lat:
 
-### 1. Visual Studio 2019 o Visual Studio 2022
+1\. **Visual Studio 2019 o Visual Studio 2022**
 
 Durant la instal·lació cal seleccionar la càrrega de treball:
 
@@ -20,51 +19,44 @@ Durant la instal·lació cal seleccionar la càrrega de treball:
 Desenvolupament d’escriptori amb .NET
 ```
 
-### 2. .NET Framework 4.7.2 Developer Pack
+2\. **.NET Framework 4.7.2 Developer Pack**
 
-El projecte està desenvolupat amb **.NET Framework 4.7.2**.
+El projecte està desenvolupat amb .NET Framework 4.7.2.
 
-### 3. Python 3.10
+3\. **Python 3.10**
 
-Es recomana utilitzar **Python 3.10**, especialment per al reconeixement de gestos amb MediaPipe.
+És necessari per executar els scripts de reconeixement de gestos, detecció d’objectes, servidor WebRTC i publisher de vídeo.
 
-Per comprovar la versió instal·lada:
+Es recomana utilitzar Python 3.10 perquè és compatible amb la versió de MediaPipe utilitzada en aquest projecte.
 
-```bash
-py -3.10 --version
-```
-
-### 2.4 Microsoft Edge WebView2 Runtime
+4\. **Microsoft Edge WebView2 Runtime**
 
 Necessari perquè l’aplicació C# pugui mostrar el vídeo dins del formulari.
 
-### 2.5 Broker MQTT
-
-L’aplicació utilitza MQTT per rebre la informació dels gestos i dels objectes detectats.
-
-Cal tenir un broker MQTT actiu en local, per exemple **Mosquitto**, escoltant al port:
-
-```text
-127.0.0.1:1883
-```
-
-### 2.6 Càmera o webcam funcional
+5\. **Càmera o webcam funcional**
 
 La càmera s’utilitza per capturar el vídeo, detectar gestos i detectar objectes.
 
-### 2.7 Micròfon funcional
+6\. **Broker MQTT**
 
-Necessari per utilitzar el reconeixement de veu.
+El projecte utilitza MQTT per comunicar els resultats dels scripts de Python amb l’aplicació C#.
 
-### 2.8 Llibreria csDronLink.dll
+Es pot utilitzar Mosquitto com a broker local.
 
-La llibreria `csDronLink.dll` ha d’estar situada a la carpeta principal de l’aplicació final:
+7\. **Llibreria `csDronLink.dll`**
+
+Aquesta DLL ha d’estar situada a la carpeta principal del demostrador:
 
 ```text
 TFG-Final/AplicacioFinal/csDronLink.dll
 ```
 
-### 2.9 Paquets NuGet
+ 8\. **Micròfon funcional**
+
+Necessari per utilitzar el reconeixement de veu.
+
+
+9\. **Paquets NuGet**
 
 En obrir la solució amb Visual Studio, cal restaurar els paquets NuGet del projecte.
 
@@ -193,29 +185,92 @@ El resultat correcte hauria de ser semblant a:
 True
 ```
 
-## 4. Execució
+## 4. Ubicació dels fitxers principals
+
+Els fitxers principals de l’aplicació final han d’estar situats a les carpetes següents.
+
+La llibreria del dron ha d’estar a:
+
+```text
+TFG-Final/AplicacioFinal/csDronLink.dll
+```
+
+El fitxer de solució de Visual Studio ha d’estar a:
+
+```text
+TFG-Final/AplicacioFinal/WindowsFormsApp1/WindowsFormsApp1.sln
+```
+
+Els scripts del servidor WebRTC han d’estar a:
+
+```text
+TFG-Final/AplicacioFinal/WindowsFormsApp1/feature-webrtc/server.py
+TFG-Final/AplicacioFinal/WindowsFormsApp1/feature-webrtc/script_publisher.py
+```
+
+Els scripts de gestos i objectes han d’estar a:
+
+```text
+TFG-Final/AplicacioFinal/WindowsFormsApp1/WindowsFormsApp1/detectar_mano_mp.py
+TFG-Final/AplicacioFinal/WindowsFormsApp1/WindowsFormsApp1/detectarObjetos.py
+```
+
+També han d’estar disponibles els fitxers auxiliars necessaris per als models de detecció, com ara:
+
+```text
+hand_landmarker.task
+yolov8n.pt
+```
+
+Aquests fitxers han d’estar dins de la carpeta del projecte C#:
+
+```text
+TFG-Final/AplicacioFinal/WindowsFormsApp1/WindowsFormsApp1/
+```
+
+Els fitxers de dependències dels entorns virtuals han d’estar a la carpeta principal de l’aplicació final:
+
+```text
+TFG-Final/AplicacioFinal/requirements_mp.txt
+TFG-Final/AplicacioFinal/requirements_gestos.txt
+```
+
+Els entorns virtuals també s’han de crear dins de la carpeta principal de l’aplicació final:
+
+```text
+TFG-Final/AplicacioFinal/mp_env/
+TFG-Final/AplicacioFinal/gestos_env310/
+```
+
+Aquests entorns virtuals són necessaris per executar els scripts de Python, però no s’han de pujar al repositori.
+
+
+## 5. Execució
 
 Per executar el projecte cal seguir aquests passos:
 
-### 4.1 Clonar el repositori
-
-Descarregar o clonar el repositori principal `TFG-Final`:
+### 1. Descarregar o clonar el repositori principal `TFG-Final`
 
 ```bash
 git clone https://github.com/CarlaAbascal/TFG-Final.git
 ```
 
-### 4.2 Entrar a la carpeta de l’aplicació final
+### 2. Entrar a la carpeta del demostrador
 
 ```bash
 cd TFG-Final\AplicacioFinal
 ```
 
-### 4.3 Preparar els entorns virtuals
+### 3. Crear els entorns virtuals
 
-Crear els entorns virtuals `mp_env` i `gestos_env310` seguint els passos de l’apartat 3.
+Abans d’executar l’aplicació, cal haver creat els dos entorns virtuals explicats a l’apartat anterior:
 
-### 4.4 Obrir la solució amb Visual Studio
+```text
+mp_env
+gestos_env310
+```
+
+### 4. Obrir el projecte amb Visual Studio
 
 Obrir amb Visual Studio el fitxer de solució:
 
@@ -223,11 +278,19 @@ Obrir amb Visual Studio el fitxer de solució:
 WindowsFormsApp1/WindowsFormsApp1.sln
 ```
 
-### 4.5 Restaurar els paquets NuGet
+### 5. Comprovar la ubicació de `csDronLink.dll`
+
+El fitxer `csDronLink.dll` ha d’estar situat a:
+
+```text
+TFG-Final/AplicacioFinal/csDronLink.dll
+```
+
+### 6. Restaurar els paquets NuGet
 
 Si Visual Studio no els restaura automàticament, restaurar els paquets NuGet del projecte.
 
-### 4.6 Comprovar el broker MQTT
+### 7. Comprovar el broker MQTT
 
 Abans d’executar l’aplicació, comprovar que el broker MQTT està actiu en local:
 
@@ -235,24 +298,26 @@ Abans d’executar l’aplicació, comprovar que el broker MQTT està actiu en l
 127.0.0.1:1883
 ```
 
-### 4.7 Compilar i executar l’aplicació
+### 8. Compilar i executar l’aplicació
 
-Compilar i executar el projecte des de Visual Studio.
+Des de Visual Studio, compilar i executar el projecte.
 
-### 4.8 Connectar el sistema
+### 9. Connectar el sistema
 
-Dins de l’aplicació, prémer el botó **Conectar**.
+Dins de l’aplicació, prémer el botó **Conectar**
 
-Aquest botó connecta el dron en mode simulació, inicia la telemetria i arrenca automàticament els scripts necessaris per al vídeo en temps real:
+Aquest botó realitza les accions següents:
 
 ```text
-server.py
-script_publisher.py
+1\. Connecta el dron en mode simulació.
+2\. Sol·licita la telemetria.
+3\. Inicia el servidor WebRTC.
+4\. Inicia el publisher de vídeo.
+5\. Deixa disponible el stream de vídeo.
 ```
-
 Quan la connexió s’ha iniciat correctament, el vídeo capturat per la càmera es mostra dins del formulari mitjançant WebView2.
 
-### 4.9 Activar el reconeixement de gestos
+### 10. Activar el reconeixement de gestos
 
 Per activar el reconeixement de gestos, prémer el botó **Gestos**.
 
@@ -266,35 +331,30 @@ Dos   → Girar a la derecha
 Tres  → Girar a la izquierda
 ```
 
-### 4.10 Activar la detecció d’objectes
+### 11. Activar la detecció d’objectes
 
 Per activar la detecció d’objectes, prémer el botó **Objetos**.
 
 El sistema executa el script de detecció d’objectes i envia a l’aplicació la informació dels objectes detectats mitjançant MQTT.
 
-### 4.11 Activar el reconeixement de veu
+### 12. Activar el reconeixement de veu
 
 Per activar el reconeixement de veu, prémer el botó **Activar voz**.
 
 L’aplicació permet interpretar comandes vocals com:
 
 ```text
-conéctate
-despega
-aterriza
-avanza
-gira a la derecha
-gira a la izquierda
-sube
-baja
-activa gestos
-activa objetos
-detener
+conectar
+despegar
+aterrizar
+avanzar 5 metros
+girar 90 grados a la derecha
+girar 45 grados a la izquierda
 ```
 
 En alguns casos, si falta algun paràmetre, l’aplicació pot demanar informació addicional. Per exemple, si l’usuari diu “avanza”, el sistema pot demanar quants metres ha d’avançar.
 
-### 4.12 Capturar imatges i gravar vídeo
+### 13. Capturar imatges i gravar vídeo
 
 L’aplicació també permet:
 
@@ -305,7 +365,7 @@ Gravar vídeo en format WEBM
 
 Els fitxers generats es desen a la carpeta de descàrregues de l’usuari.
 
-### 4.13 Aturar els processos auxiliars
+### 14. Aturar els processos auxiliars
 
 Per aturar els processos auxiliars, prémer el botó **Detener**.
 
