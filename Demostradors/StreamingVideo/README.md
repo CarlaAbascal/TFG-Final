@@ -4,147 +4,122 @@
 
 ## 1. Presentació
 
-
-
 Aquest projecte forma part del Treball de Fi de Grau i implementa un demostrador de streaming de vídeo en temps real.
 
+L’aplicació està desenvolupada en C# amb Windows Forms i utilitza WebView2 per visualitzar el vídeo rebut mitjançant WebRTC. La transmissió de vídeo es gestiona amb scripts auxiliars en Python, que s’encarreguen d’iniciar el servidor WebRTC i publicar el vídeo capturat per la càmera.
 
-
-L’aplicació està desenvolupada en C# amb Windows Forms i utilitza WebView2 per visualitzar el vídeo rebut mitjançant WebRTC. La transmissió de vídeo es gestiona amb scripts auxiliars en Python.
-
-
+Aquest demostrador permet comprovar de manera independent el funcionament del vídeo en temps real abans d’integrar-lo dins de l’aplicació final.
 
 ## 2. Instal·lació
 
-
-
 Per executar aquest projecte cal tenir instal·lat:
 
-
-
 1\. **Visual Studio 2019 o Visual Studio 2022**
-
-&#x20;  Durant la instal·lació cal seleccionar la càrrega de treball:
-
+Durant la instal·lació cal seleccionar la càrrega de treball:
 
 
 ```text
 Desenvolupament d’escriptori amb .NET
 ```
 
-
-
 2\. **.NET Framework 4.7.2 Developer Pack**
-
-&#x20;  El projecte està desenvolupat amb .NET Framework 4.7.2.
-
-
+El projecte està desenvolupat amb .NET Framework 4.7.2.
 
 3\. **Python 3**
 
-&#x20;  Necessari per executar el servidor WebRTC i el publisher de vídeo.
-
-
+Necessari per executar el servidor WebRTC i el publisher de vídeo.
 
 4\. **Llibreries de Python**
-
-&#x20;  Des de la carpeta `feature-webrtc`, instal·lar les dependències principals:
-
-
+Des de la carpeta `feature-webrtc`, instal·lar les dependències principals:
 
 ```bash
 pip install aiohttp aiortc opencv-python av
 ```
-
+Aquestes llibreries permeten crear el servidor WebRTC, capturar el vídeo de la càmera i enviar-lo cap a l’aplicació.
 
 
 5\. **Microsoft Edge WebView2 Runtime**
 
-&#x20;  Necessari perquè l’aplicació C# pugui mostrar el vídeo dins del formulari.
-
-
+Necessari perquè l’aplicació C# pugui mostrar el vídeo dins del formulari.
 
 6\. **Càmera o webcam funcional**
 
-&#x20;  El publisher de vídeo utilitza la càmera de l’ordinador.
-
-
+El publisher de vídeo utilitza la càmera de l’ordinador.
 
 7\. **Llibreria `csDronLink.dll`**
 
-&#x20;  Aquesta DLL ha d’estar situada a la carpeta principal del demostrador:
-
-
+Aquesta DLL ha d’estar situada a la carpeta principal del demostrador:
 
 ```text
 TFG-Final/Demostradors/StreamingVideo/csDronLink.dll
 ```
+## 3. Ubicació dels fitxers principals
+
+Els fitxers principals del demostrador han d’estar situats a les carpetes següents.
+
+La llibreria del dron ha d’estar a:
+
+`TFG-Final/Demostradors/StreamingVideo/csDronLink.dll`
+
+El fitxer de solució de Visual Studio ha d’estar a:
+
+`TFG-Final/Demostradors/StreamingVideo/WindowsFormsApp1/WindowsFormsApp1.sln`
+
+Els fitxers principals del projecte C# han d’estar dins de:
+
+`TFG-Final/Demostradors/StreamingVideo/WindowsFormsApp1/WindowsFormsApp1/`
+
+Els scripts del servidor WebRTC han d’estar a:
+```text
+TFG-Final/Demostradors/StreamingVideo/feature-webrtc/server.py
+TFG-Final/Demostradors/StreamingVideo/feature-webrtc/script_publisher.py
+``` 
+També ha d’estar disponible el fitxer HTML utilitzat pel receptor de vídeo:
+
+`TFG-Final/Demostradors/StreamingVideo/feature-webrtc/receiver.html`
 
 
-
-## 3. Execució
-
-
+## 4. Execució
 
 Per executar el projecte cal seguir aquests passos:
 
-
-
-1\. Descarregar o clonar el repositori principal `TFG-Final`.
-
-
+### 1 Descarregar o clonar el repositori principal `TFG-Final`.
 
 ```bash
 git clone https://github.com/CarlaAbascal/TFG-Final.git
 ```
 
-
-
-2\. Entrar a la carpeta del projecte de vídeo en temps real:
-
-
+### 2 Entrar a la carpeta del projecte de vídeo en temps real:
 
 ```text
 TFG-Final/Demostradors/StreamingVideo/
 ```
 
-
-3\. Obrir amb Visual Studio el fitxer de solució:
-
-
+### 3 Obrir amb Visual Studio el fitxer de solució:
 
 ```text
 WindowsFormsApp1/WindowsFormsApp1.sln
 ```
 
 
-
-4\. Des de Visual Studio, obrir el terminal integrat i situar-se dins de la carpeta `feature-webrtc/`.
-
+### 4 Des de Visual Studio, obrir el terminal integrat i situar-se dins de la carpeta `feature-webrtc/`.
 
 
-5\. Executar el servidor WebRTC des del terminal de Visual Studio:
+### 5 Executar el servidor WebRTC des del terminal de Visual Studio:
 
 ```bash
 python server.py
 ```
-
 Aquest terminal s’ha de mantenir obert mentre s’executa el demostrador.
 
-
-6\. Obrir un segon terminal dins de la mateixa carpeta i executar el publisher de vídeo:
-
-
+### 6 Obrir un segon terminal dins de la mateixa carpeta i executar el publisher de vídeo:
 
 ```bash
 python script_publisher.py
 ```
-
 Aquest script captura el vídeo de la càmera i l’envia al servidor WebRTC.
 
-
-
-7\. Abans d’executar l’aplicació C#, es pot comprovar que el vídeo s’està transmetent correctament obrint en un navegador:
+### 7 Abans d’executar l’aplicació C#, es pot comprovar que el vídeo s’està transmetent correctament obrint en un navegador:
 
 ```web
 http://127.0.0.1:8080/
@@ -152,45 +127,59 @@ http://127.0.0.1:8080/
 
 Si tot funciona correctament, s’hauria de visualitzar el vídeo capturat per la càmera.
 
+### 8 Compilar i executar l’aplicació amb Visual Studio.
 
-8\. Compilar i executar l’aplicació amb Visual Studio.
-
-
-
-9\. Dins de l’aplicació, prémer el botó corresponent per iniciar el streaming. El vídeo es mostrarà dins del formulari mitjançant WebView2.
+### 9 Dins de l’aplicació, prémer el botó corresponent per iniciar el streaming. El vídeo es mostrarà dins del formulari mitjançant WebView2.
 
 
 
-## 4. Possibles problemes
-
-
+## 5. Possibles problemes
 
 Si el vídeo no es mostra, comprovar que:
 
+* El servidor `server.py` està en execució.
+* El publisher `script_publisher.py` està en execució.
+* El port `8080` no està ocupat per un altre procés.
+* La càmera està connectada i no està sent utilitzada per una altra aplicació.
+* Les dependències de Python estan instal·lades.
+* WebView2 Runtime està instal·lat.
+* El fitxer `csDronLink.dll` es troba a la carpeta correcta.
+
+Si el port 8080 està ocupat
+
+Per comprovar si el port 8080 està ocupat:
+```bash
+netstat -ano | findstr :8080
+```
+Si apareix un procés utilitzant aquest port, es pot finalitzar amb:
+```bash
+taskkill /PID <PID> /F
+```
+Cal substituir <PID> pel número del procés que apareix a la terminal.
+
+Si la càmera no funciona
+
+Comprovar que:
+
+* La webcam està connectada correctament.
+* Windows permet l’accés a la càmera.
+* Cap altra aplicació està utilitzant la càmera.
+* El publisher `script_publisher.py` no mostra errors al terminal.
+
+Si l’aplicació no compila
+
+Comprovar que:
+
+* El projecte s’ha obert des del fitxer `WindowsFormsApp1.sln`.
+* Està instal·lat el `.NET Framework 4.7.2 Developer Pack`.
+* Els paquets NuGet s’han restaurat correctament.
+* WebView2 Runtime està instal·lat.
+* El fitxer `csDronLink.dll` es troba a la carpeta principal del demostrador.
 
 
-\* El servidor `server.py` està en execució.
-
-\* El publisher `script_publisher.py` està en execució.
-
-\* El port `8080` no està ocupat per un altre procés.
-
-\* La càmera està connectada i no està sent utilitzada per una altra aplicació.
-
-\* Les dependències de Python estan instal·lades.
-
-\* WebView2 Runtime està instal·lat.
-
-\* El fitxer `csDronLink.dll` es troba a la carpeta correcta.
-
-
-
-## 5. Notes
-
-
+## 6. Notes
 
 Aquest projecte està pensat per executar-se de manera independent dins del repositori `TFG-Final`.
-
 
 
 No cal descarregar cap altre repositori extern, ja que tots els fitxers necessaris per executar aquesta part estan inclosos dins de la carpeta `StreamingVideo`.
