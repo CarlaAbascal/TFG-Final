@@ -177,7 +177,7 @@ py -3.10 -m venv mp_env
 Activar l’entorn virtual:
 
 ```bat
-mp\_env\\Scripts\\activate
+mp_env\Scripts\activate
 ```
 
 Actualitzar `pip`:
