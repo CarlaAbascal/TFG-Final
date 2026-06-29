@@ -377,9 +377,9 @@ Per aturar els processos auxiliars, prémer el botó **Detener**.
 
 Aquest botó atura els scripts de gestos, objectes, servidor WebRTC i publisher de vídeo.
 
-## 5. Possibles problemes
+## 6. Possibles problemes
 
-### 5.1 L’aplicació no compila
+1\. L’aplicació no compila
 
 Comprovar que:
 
@@ -390,7 +390,7 @@ Comprovar que:
 * Visual Studio no mostra errors de referències.
 * No falten fitxers del projecte C#.
 
-### 5.2 El vídeo no es mostra
+2\. El vídeo no es mostra
 
 Comprovar que:
 
@@ -415,7 +415,7 @@ Si apareix un procés utilitzant aquest port, es pot finalitzar amb:
 taskkill /PID <PID> /F
 ```
 
-### 5.3 El reconeixement de gestos no funciona
+3\. El reconeixement de gestos no funciona
 
 Comprovar que:
 
@@ -429,7 +429,7 @@ Comprovar que:
 * El broker MQTT està actiu.
 * La càmera funciona correctament.
 
-### 5.4 La detecció d’objectes no funciona
+4\. La detecció d’objectes no funciona
 
 Comprovar que:
 
@@ -442,7 +442,7 @@ Comprovar que:
 * El broker MQTT està actiu.
 * La càmera funciona correctament.
 
-### 5.5 El reconeixement de veu no funciona
+5\. El reconeixement de veu no funciona
 
 Comprovar que:
 
@@ -452,7 +452,7 @@ Comprovar que:
 * L’idioma de reconeixement és compatible amb les comandes definides.
 * No hi ha massa soroll ambiental.
 
-### 5.6 MQTT no connecta
+6\. MQTT no connecta
 
 Comprovar que:
 
@@ -461,7 +461,7 @@ Comprovar que:
 * L’adreça configurada és `127.0.0.1`.
 * No hi ha cap tallafoc bloquejant la connexió local.
 
-### 5.7 Els scripts de Python no s’executen
+7\. Els scripts de Python no s’executen
 
 Comprovar que:
 
@@ -478,7 +478,7 @@ gestos_env310
 * Els fitxers `.py` estan ubicats a la carpeta correcta.
 * Els scripts tenen permisos d’execució.
 
-## 6. Notes
+## 7. Notes
 
 Aquest projecte està pensat per executar-se de manera independent dins del repositori `TFG-Final`.
 
