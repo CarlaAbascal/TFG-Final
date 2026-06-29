@@ -211,7 +211,7 @@ py -3.10 -m venv gestos_env310
 Activar l’entorn virtual:
 
 ```bat
-gestos\_env310\\Scripts\\activate
+gestos_env310\Scripts\activate
 ```
 
 Actualitzar `pip`:
@@ -259,7 +259,7 @@ Els fitxers principals del demostrador han d’estar situats a les carpetes seg�
 La llibreria del dron ha d’estar a:
 
 ```text
-TFG-Final/Demostradors/ReconeixementGestos/csDronLink.dll
+TFG-Final/Demostradors/ReconeixementGestosObjectes/csDronLink.dll.
 ```
 
 Els scripts del servidor WebRTC han d’estar a:
