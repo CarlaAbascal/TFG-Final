@@ -1,5 +1,6 @@
 # Reconeixement de veu
 
+Vídeo demostratiu: https://youtu.be/AVEB5ho296A 
 
 
 ## 1. Presentació
