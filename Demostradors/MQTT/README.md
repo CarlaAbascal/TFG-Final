@@ -1,5 +1,7 @@
 # MQTT
 
+Vídeo demostratiu: https://youtu.be/ADS4koKEKS8
+
 ## 1. Presentació
 
 Aquest apartat forma part del Treball de Fi de Grau i documenta l’ús de MQTT dins del projecte.
