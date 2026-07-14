@@ -1,6 +1,7 @@
 # Reconeixement de gestos i objectes
 
 Vídeo demostratiu gestos: https://youtu.be/dq0FPDiEsiQ
+
 Vídeo demostratiu objectes: https://youtu.be/FLQ5eVuVptw 
 
 ## 1. Presentació
