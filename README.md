@@ -1,6 +1,6 @@
 # TFG-Final
 
-Vídeo demostratiu aplicació: https://youtu.be/ufHzLsVx6qA
+
 
 ## 1. Presentació
 
