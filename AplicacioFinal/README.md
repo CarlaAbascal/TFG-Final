@@ -1,5 +1,7 @@
 # Aplicació final
 
+Vídeo demostratiu: https://youtu.be/ufHzLsVx6qA
+
 ## 1. Presentació
 
 Aquest projecte forma part del Treball de Fi de Grau i implementa l’aplicació final del sistema de control del dron.
